@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 9 9% 11%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 9 9% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 9 9% 11%;
+  --border: 0 0% 89%;
+  --input: 0 0% 89%;
+  --primary: 9 9% 11%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 9 9% 11%;
+  --accent: 0 0% 96%;
+  --accent-foreground: 9 9% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 9 9% 11%;
+  --radius: 0.75rem;
+  
+  /* Custom colors for the design */
+  --gray-50: 0 0% 98%;
+  --gray-100: 0 0% 96%;
+  --gray-200: 0 0% 90%;
+  --gray-300: 0 0% 83%;
+  --gray-400: 0 0% 64%;
+  --gray-500: 0 0% 45%;
+  --gray-600: 0 0% 32%;
+  --gray-700: 0 0% 25%;
+  --gray-800: 0 0% 15%;
+  --gray-900: 0 0% 9%;
+}
+
+.dark {
+  --background: 9 9% 11%;
+  --foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  --popover: 9 9% 11%;
+  --popover-foreground: 0 0% 98%;
+  --card: 9 9% 11%;
+  --card-foreground: 0 0% 98%;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 9 9% 11%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 0 0% 83%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Hover states */
+.hover-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-card:hover {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Navigation active state */
+.nav-item.active {
+  background-color: hsl(var(--gray-100));
+  color: hsl(var(--gray-900));
+}
+
+.nav-item:not(.active) {
+  color: hsl(var(--gray-700));
+}
+
+.nav-item:not(.active):hover {
+  background-color: hsl(var(--gray-50));
+}
